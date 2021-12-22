@@ -63,7 +63,7 @@ pub fn part_a(input: &str) -> usize {
 
 pub fn part_b(input: &str) -> usize {
     let (nums, boards) = parse(input);
-    let mut in_play: HashSet<usize> = (0..boards.len()).collect();
+    let mut in_play: HashSet<_> = (0..boards.len()).collect();
 
     let mut marks = vec![0; boards.len()];
     for num in nums {
