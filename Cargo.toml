@@ -8,12 +8,13 @@ edition = "2021"
 [dependencies]
 day01 = {path = "day01"}
 day02 = {path = "day02"}
+day03 = {path = "day03"}
 
 [workspace]
 members = [
     "day01",
     "day02",
-    # "day03",
+    "day03",
     # "day04",
     # "day05",
     # "day06",
