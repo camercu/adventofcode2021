@@ -8,8 +8,8 @@ const COL: usize = 0b100001000010000100001;
 // boards: vector of boards as map of (number: index) pairs
 fn parse(input: &str) -> (Vec<usize>, Vec<BTreeMap<usize, usize>>) {
     let (nums, boards) = input.split_once("\n\n").unwrap();
-    let nums: Vec<usize> = nums.split(',').map(|n| n.parse().unwrap()).collect();
-    let boards: Vec<BTreeMap<usize, usize>> = boards
+    let nums = nums.split(',').map(|n| n.parse().unwrap()).collect();
+    let boards = boards
         .split("\n\n")
         .map(|board| {
             board
