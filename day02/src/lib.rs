@@ -1,5 +1,5 @@
 // Parses lines in format <direction> <amount>
-pub fn parse(input: &str) -> Vec<(&str, i64)> {
+fn parse(input: &str) -> Vec<(&str, i64)> {
     let mut result = Vec::new();
     for line in input.lines() {
         let (direction, amount) = line.split_once(" ").unwrap();
@@ -15,18 +15,10 @@ pub fn part_a(input: &str) -> (i64, i64) {
 
     for (direction, amount) in parse(input) {
         match direction {
-            "forward" => {
-                horizontal += amount;
-            }
-            "up" => {
-                depth -= amount;
-            }
-            "down" => {
-                depth += amount;
-            }
-            _ => {
-                panic!();
-            }
+            "forward" => horizontal += amount,
+            "up" => depth -= amount,
+            "down" => depth += amount,
+            _ => panic!("Bad input direction: {}", direction),
         }
     }
     (horizontal, depth)
@@ -43,15 +35,9 @@ pub fn part_b(input: &str) -> (i64, i64) {
                 horizontal += amount;
                 depth += aim * amount;
             }
-            "up" => {
-                aim -= amount;
-            }
-            "down" => {
-                aim += amount;
-            }
-            _ => {
-                panic!();
-            }
+            "up" => aim -= amount,
+            "down" => aim += amount,
+            _ => panic!("Bad input direction: {}", direction),
         }
     }
     (horizontal, depth)
