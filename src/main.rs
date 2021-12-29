@@ -3,4 +3,5 @@ fn main() {
     day02::solve();
     day03::solve();
     day04::solve();
+    day05::solve();
 }
